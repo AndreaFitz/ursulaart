@@ -46,12 +46,45 @@ body {
   font-size: 3rem;
   font-weight: bold;
 }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
   
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -59,6 +92,50 @@ body {
   font-size: 2rem;
   text-decoration: none;
   font-weight: 500;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: #a875a0;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 1rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+  
+  .nav-links a {
+    font-size: 1.5rem;
+  }
+  
+  .app-name {
+    font-size: 1.5rem;
+  }
+  
+  .logo img {
+    height: 25px;
+  }
+  
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
 }
 
 
@@ -328,19 +405,37 @@ p {
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Reduced padding for smaller navbar */
+    }
+    
     .content-with-images {
         flex-direction: column;
         align-items: center;
+        padding: 0.5rem;
+        margin-top: 1rem;
     }
     
     .side-image {
         flex: none;
         margin-bottom: 1rem;
+        transform: none !important; /* Reset transforms on mobile */
     }
     
     .text-content {
-        padding: 0;
+        padding: 0 0.5rem;
         order: 3;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .text-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        text-align: left;
+        max-width: 100%;
+        padding: 0 0.5rem;
     }
     
     .left-image {
@@ -349,5 +444,82 @@ p {
     
     .right-image {
         order: 2;
+    }
+    
+    .side-painting {
+        max-width: 180px;
+        height: auto;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    .gallery-image {
+        height: 180px;
+        max-width: 100%;
+    }
+    
+    .gallery-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-item h4 {
+        font-size: 1rem;
+    }
+    
+    .fullscreen-image {
+        padding-top: 1rem;
+        min-height: calc(100vh - 140px);
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .footer {
+        padding: 1rem 0.5rem;
+    }
+    
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+    .app-name {
+        font-size: 1.2rem;
+    }
+    
+    .logo img {
+        height: 20px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .text-content p {
+        font-size: 0.9rem;
+        padding: 0 0.25rem;
+    }
+    
+    .side-painting {
+        max-width: 150px;
+    }
+    
+    .gallery-item h3 {
+        font-size: 1rem;
+    }
+    
+    .gallery-item h4 {
+        font-size: 0.9rem;
     }
 }
