@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paprika&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>About the Artist - Ursulaart</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="css/images/logo2.PNG" alt="App Logo" />
+        <span class="app-name">Ursulaart</span>
+      </div>
+
+      <!-- Hamburger Menu Button -->
+      <button
+        class="hamburger"
+        id="hamburger-btn"
+        aria-label="Toggle navigation"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About the Artist</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="fullscreen-image">
+      <img
+        src="css/images/acrylics.png"
+        alt="Acrylics image"
+        class="full-page-image"
+      />
+      <h1>About the Artist</h1>
+      <p></p>
+      <div class="artist-bio">
+        <h2>Biography</h2>
+        <div class="text-content">
+          <p>
+            Ursula Newell-Walker, though born in Lancashire, grew up in
+            Australia and worked and exhibited there, in Java and Eire, before
+            returning to England. She comes from a family of painters and field
+            naturalists.
+          </p>
+          <p>
+            She is fascinated by the way in which light, the seasons and the
+            changing moods and internal stances of the viewer imbue the ordinary
+            with something akin to mystery. Her work explores the transcendent
+            within the everyday and is influenced by the 'visionary' tradition;
+            from Samuel Palmer to David Blackburn.
+          </p>
+          <p>
+            All her works are about place, time and light, and that which lies
+            always at the threshold of consciousness. Each painting is a glimpse
+            of another reality; always there, but often unnoticed.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 'Drea Designs'. All rights reserved.</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Mobile Menu Script -->
+    <script>
+      const hamburger = document.getElementById("hamburger-btn");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      // Close menu when clicking on a link
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
